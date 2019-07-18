@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <windows.h>  
 #include <iostream>
+#include <fstream>
 #ifndef __MyTimer_H__  
 #define __MyTimer_H__  
 #define random(a,b) ((rand() % (b-a+1))+ a
@@ -47,6 +48,11 @@ public:
 #endif  
 int main()
 {
+	std::ofstream dataFile;
+	dataFile.open("D:\\Program Files (Custom)\\Data\\dataFile.txt", std::ofstream::app);
+	dataFile << "\n";
+	// 朝TXT文档中写入数据
+	// 关闭文档
 	/*
 	Goal:
 		Analysis the time 100000 sentences executed.
@@ -76,7 +82,7 @@ int main()
 		1)create random values
 		2)trying to calc
 	*/
-	const int test_time = 25;
+	const int test_time = 250;
 	long long int_1[10000];
 	long long c = 0;
 	long long DeviationTime = 0;
@@ -84,6 +90,10 @@ int main()
 
 	long long sum_time = 0;
 	long float average_time = 0;
+	for (int i = 0; i < 10000; i++)
+	{
+		int_1[i] = 0;
+	}
 #pragma region operator+ 0,100
 	std::cout << "Current operation : operator+ 0,100-----------" << std::endl;
 	c = 0;
@@ -122,8 +132,8 @@ int main()
 			sum_time = sum_time + timer.costTime - DeviationTime;
 		}
 	}
-
-	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; system("pause");
+	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; /*system("pause");*/
+	dataFile << average_time << "\t";
 #pragma endregion
 #pragma region operator+ 10,000 ~ 100,000
 	/*
@@ -170,7 +180,8 @@ int main()
 			sum_time = sum_time + timer.costTime - DeviationTime;
 		}
 	}
-	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; system("pause");
+	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; /*system("pause");*/
+	dataFile << average_time << "\t";
 #pragma endregion
 #pragma region operator+ 10,000,000 ~ 100,000,000
 	/*
@@ -217,7 +228,8 @@ int main()
 			sum_time = sum_time + timer.costTime - DeviationTime;
 		}
 	}
-	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; system("pause");
+	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; /*system("pause");*/
+	dataFile << average_time << "\t\n";
 
 #pragma endregion
 
@@ -259,7 +271,8 @@ int main()
 			sum_time = sum_time + timer.costTime - DeviationTime;
 		}
 	}
-	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; system("pause");
+	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; /*system("pause");*/
+	dataFile << average_time << "\t";
 #pragma endregion
 #pragma region operator* 10,000 ~ 100,000
 	std::cout << "Current operation : operator* 10,000 ~ 100,000-----------" << std::endl;
@@ -299,7 +312,8 @@ int main()
 			sum_time = sum_time + timer.costTime - DeviationTime;
 		}
 	}
-	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; system("pause");
+	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; /*system("pause");*/
+	dataFile << average_time << "\t";
 #pragma endregion
 #pragma region operator* 10,000,000 ~ 100,000,000
 	std::cout << "Current operation : operator* 10,000,000 ~ 100,000,000-----------" << std::endl;
@@ -339,7 +353,8 @@ int main()
 			sum_time = sum_time + timer.costTime - DeviationTime;
 		}
 	}
-	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; system("pause");
+	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; /*system("pause");*/
+	dataFile << average_time << "\t\n";
 #pragma endregion
 
 #pragma region function Integer power (0,100) ^ %
@@ -380,7 +395,8 @@ int main()
 			sum_time = sum_time + timer.costTime - DeviationTime;
 		}
 	}
-	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; system("pause");
+	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; /*system("pause");*/
+	dataFile << average_time << "\t";
 #pragma endregion
 #pragma region function Integer power (10,000 ~ 100,000) ^ %
 	std::cout << "Current operation : ipow(10,000 ~ 100,000) ^ %-----------" << std::endl;
@@ -420,7 +436,8 @@ int main()
 			sum_time = sum_time + timer.costTime - DeviationTime;
 		}
 	}
-	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; system("pause");
+	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; /*system("pause");*/
+	dataFile << average_time << "\t\n";
 #pragma endregion
 
 #pragma region function Real power (0,100) ^ %
@@ -461,7 +478,8 @@ int main()
 			sum_time = sum_time + timer.costTime - DeviationTime;
 		}
 	}
-	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; system("pause");
+	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; /*system("pause");*/
+	dataFile << average_time << "\t";
 #pragma endregion
 #pragma region function Real power (10,000 ~ 100,000) ^ %
 	std::cout << "Current operation : rpow(10,000 ~ 100,000) ^ %-----------" << std::endl;
@@ -501,8 +519,10 @@ int main()
 			sum_time = sum_time + timer.costTime - DeviationTime;
 		}
 	}
-	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl; system("pause");
+	average_time = (float)sum_time / (float)test_time; std::cout << "Average time : \t" << average_time << "\t μs" << std::endl;
+	dataFile << average_time << "\t\n";
 #pragma endregion
 
+	dataFile.close();
 	return 0;
 }
