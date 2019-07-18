@@ -8,8 +8,8 @@
 -------
 该测试工具使用毫秒计时的方法对基本运算进行了时间统计
     
-`警告`
-    该应用程序并不能代替精确的计算机测试工具，该工具在多种环境下运行返回的结果可能不同。
+`警告
+    该应用程序并不能代替精确的计算机测试工具，该工具在多种环境下运行返回的结果可能不同。`
 * 目的
 计量基本预算
 * 引用
@@ -27,9 +27,10 @@ English(Trans by Google(R))
 * Basic operation (Debug)<br>
    Windows 10 Enterprise x64
 -------
-    The test tool uses the millisecond timing method to perform time statistics on the basic operations.
-`Warning`
-    This application is not a substitute for accurate computer testing tools, and the results returned by the tool in a variety of environments may vary.
+The test tool uses the millisecond timing method to perform time statistics on the basic operations.
+    
+`Warning :
+    This application is not a substitute for accurate computer testing tools, and the results returned by the tool in a variety of environments may vary.`
 * Purpose
 Measuring the basic budget
 * Reference
