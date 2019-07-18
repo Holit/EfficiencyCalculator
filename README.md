@@ -9,7 +9,7 @@
 该测试工具使用毫秒计时的方法对基本运算进行了时间统计
     
 `警告`
-    该应用程序处于开发阶段，在Release为空的时间内请谨慎使用
+    该应用程序并不能代替精确的计算机测试工具，该工具在多种环境下运行返回的结果可能不同。
 * 目的
 计量基本预算
 * 引用
@@ -29,7 +29,7 @@ English(Trans by Google(R))
 -------
     The test tool uses the millisecond timing method to perform time statistics on the basic operations.
 `Warning`
-    The application is in development and should be used with caution when the Release is empty.
+    This application is not a substitute for accurate computer testing tools, and the results returned by the tool in a variety of environments may vary.
 * Purpose
 Measuring the basic budget
 * Reference
